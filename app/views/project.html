@@ -1,0 +1,74 @@
+<div class="ubd-details">
+	<header>
+		<h1 class="text-center">
+			<a class="pull-left" ng-href="#/">
+				<span class="fa fa-angle-left"></span>
+			</a>
+			{{details.name}}
+		</h1>
+		<div class="media">
+			<a class="media-left">
+				<img ng-src="images/{{details.thumbnail}}" alt="project image" title="{{details.name}}">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">
+					Description
+				</h4>
+				<p class="soft">
+					{{details.description}}
+				</p>
+				<p ng-click="removeProject()" >
+					<span class="glyphicon glyphicon-trash"></span> Delete 
+				</p>
+			</div>
+		</div>
+		<p class="info">
+			<strong>Status:</strong>
+			<br>
+			{{details.status}}
+			<br>
+			<strong>Live Devices:</strong>
+			<br>
+			{{details.devices.length}}
+		</p>
+	</header>
+		<h2>
+		Project
+	</h2>
+	<table class="table home">
+		<tbody>
+			<tr ng-click="gotoView('/details')" >
+				<th>
+					Project Details
+					<small>{{details.name}}</small>
+				</th>
+				<td>
+					{{details.status}}
+				</td>
+				<td>
+					<span class="fa fa-angle-right"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>
+		Blocks
+	</h2>
+	<table class="table home">
+		<tbody>
+			<tr ng-repeat="block in blocks" ng-click="gotoView('/' + block.name.toLowerCase())" >
+				<th>
+					{{block.name}}
+					<small>{{block.details}}</small>
+				</th>
+				<td>
+					{{block.status}}
+					<small>{{ getBlockValue(block.name) }}</small>
+				</td>
+				<td>
+					<span class="fa fa-angle-right"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

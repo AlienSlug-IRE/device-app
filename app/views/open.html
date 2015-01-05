@@ -1,0 +1,13 @@
+<div class="ubd-new" ng-swipe-right="gotoView('/')">
+	<form novalidate name="new">
+		<label for="name">Choose Project</label>
+		<ul class="list-group">
+			<li ng-repeat="project in projects" class="list-group-item">
+				<a ng-click="openProject(project)">
+					{{project.name}}
+					<span class="fa fa-angle-right"></span>
+				</a>
+			</li>
+		</ul>
+	</form>
+</div>

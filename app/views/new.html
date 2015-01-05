@@ -1,0 +1,11 @@
+<div class="ubd-new" ng-swipe-right="gotoView('/')">
+	<form novalidate name="new">
+		<label for="name">Name You Project</label>
+		<div class="input-group">
+			<input type="text" name="project_name" ng-model="project.name" class="form-control" placeholder="" required>
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="submit" ng-disabled="new.$invalid" ng-click="submit(project)">Add</button>
+			</span>
+		</div>
+	</form>
+</div>

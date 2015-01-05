@@ -1,0 +1,24 @@
+<div class="ubd-details">
+	<header class="detailed">
+		<h1 class="text-center detailed">
+			<a class="pull-left" ng-click="goBack()">
+				<span class="fa fa-angle-left"></span>
+			</a>
+			Developer Notes
+		</h1>
+	</header>
+	<h2>
+		Logging
+	</h2>
+	<table class="table">
+		<tbody>
+			<tr ng-repeat="log in logs | orderBy : 'time' :true">
+				<th>
+					<pre>
+						{{log | json}}
+					</pre>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+</div>
